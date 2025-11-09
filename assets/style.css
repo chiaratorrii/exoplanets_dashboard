@@ -1,0 +1,169 @@
+/* ====== GENERAL APP STYLE ====== */
+
+body {
+    margin: 0;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #1b1f3b;
+}
+
+/* Main app container */
+#app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 40px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    color: #002244; /* deep NASA blue */
+    margin-bottom: 12px;
+}
+
+/* Paragraphs and labels */
+p, label {
+    color: #1b1f3b;
+    font-size: 15px;
+}
+
+/* ====== HEADER / NAVBAR ====== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #002244 0%, #003366 100%);
+    color: #ffcc00;
+    padding: 18px 30px;
+    border-radius: 0px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+}
+
+
+@font-face {
+    font-family: 'Nasalization Rg';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Nasalization Rg'), url('https://fonts.cdnfonts.com/s/6224/nasalization rg.woff') format('woff');
+}
+                
+.header h1 {
+    font-family: 'Nasalization Rg', sans-serif;
+    margin: 0;
+    font-size: 28px;
+    color: #f5f7fa; /* golden yellow */
+    letter-spacing: 1px;
+}
+
+.header img {
+    height: 50px;
+}
+
+/* ====== TABS & SECTIONS ====== */
+
+/* Plain container — no rounding, no shadow */
+.tabs-container {
+    background-color: #f5f7fa; /* optional */
+    padding: 0;               /* no extra padding */
+    margin-bottom: 25px;      /* optional spacing */
+}
+
+/* Individual tabs */
+.tabs-container .tab {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #002244;          /* label color */
+    border-radius: 14px 14px 0 0;        /* rounded top corners */
+    margin-right: 5px;
+    transition: background-color 0.2s, color 0.2s;
+    border-bottom: 0;              /* no border by default */
+    border-top: 0;
+}
+
+/* Hover effect for tabs */
+.tabs-container .tab:hover {
+    background-color: #e6e8f0;
+}
+
+/* Selected tab */
+.tabs-container .tab--selected {
+    background-color: #003366;     /* can match container */
+    color: #ffffff;                /* selected label color */
+    border-top: 0;
+}
+
+
+/* ====== DROPDOWNS & INPUTS ====== */
+
+.Select-control, .dash-dropdown {
+    border-radius: 8px !important;
+    border-color: #003366 !important;
+}
+
+.Select--single > .Select-control .Select-value,
+.Select-placeholder {
+    padding-left: 10px !important;
+    color: #003366 !important;
+}
+
+/* ====== BUTTONS ====== */
+
+button, .dash-button {
+    background-color: #ffcc00;
+    color: #002244;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, .dash-button:hover {
+    background-color: #ffdb4d;
+    transform: translateY(-2px);
+}
+
+/* ====== GRAPH STYLING ====== */
+
+.js-plotly-plot {
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* ====== FOOTER ====== */
+
+.footer {
+    text-align: center;
+    padding: 18px;
+    font-size: 13px;
+    color: #002244;
+    margin-top: 40px;
+    border-top: 2px solid #ffcc00;
+    background-color: #f0f3f8;
+    border-radius: 10px;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+@media (max-width: 768px) {
+    #app-container {
+        padding: 15px 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header img {
+        margin-top: 10px;
+    }
+}
