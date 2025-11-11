@@ -5,7 +5,7 @@ body {
     font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
     background-color: #f5f7fa;
     color: #1b1f3b;
-}
+} 
 
 /* Main app container */
 #app-container {
@@ -18,8 +18,9 @@ body {
 h1, h2, h3 {
     font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
     font-weight: 600;
-    color: #002244; /* deep NASA blue */
-    margin-bottom: 12px;
+    color: #1b1f3b; /* deep NASA blue */
+    margin-Top: 0px;
+    margin-Bottom: 0px;
 }
 
 /* Paragraphs and labels */
@@ -62,39 +63,14 @@ p, label {
     height: 50px;
 }
 
-/* ====== TABS & SECTIONS ====== */
-
-/* Plain container — no rounding, no shadow */
-.tabs-container {
-    background-color: #f5f7fa; /* optional */
-    padding: 0;               /* no extra padding */
-    margin-bottom: 25px;      /* optional spacing */
-}
-
-/* Individual tabs */
-.tabs-container .tab {
-    padding: 10px 15px;
-    background-color: #ffffff;
-    color: #002244;          /* label color */
-    border-radius: 14px 14px 0 0;        /* rounded top corners */
-    margin-right: 5px;
-    transition: background-color 0.2s, color 0.2s;
-    border-bottom: 0;              /* no border by default */
-    border-top: 0;
-}
+/* ====== TABS STYLING ====== */
 
 /* Hover effect for tabs */
 .tabs-container .tab:hover {
     background-color: #e6e8f0;
+    cursor: pointer;
+    transform: translateY(-4px);
 }
-
-/* Selected tab */
-.tabs-container .tab--selected {
-    background-color: #003366;     /* can match container */
-    color: #ffffff;                /* selected label color */
-    border-top: 0;
-}
-
 
 /* ====== DROPDOWNS & INPUTS ====== */
 
@@ -131,11 +107,9 @@ button:hover, .dash-button:hover {
 /* ====== GRAPH STYLING ====== */
 
 .js-plotly-plot {
-    border-radius: 12px;
     background-color: #ffffff;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-    padding: 10px;
-    margin-top: 10px;
+    box-shadow: none;
+    padding: 2px;
 }
 
 /* ====== FOOTER ====== */
