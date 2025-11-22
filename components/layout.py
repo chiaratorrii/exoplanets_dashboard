@@ -11,7 +11,7 @@ header = html.Div(className="header", children=[
             html.Img(src="/assets/logo.png"),
             html.H1("Exoplanets Dashboard")])
 
-tabs_selector = dcc.Tabs(id="tabs-selector", value='overview', style=tabs_styles, className="tabs-container",
+tabs_selector = dcc.Tabs(id="tabs-selector", value='comparison', style=tabs_styles, className="tabs-container",
                          children=[
                              dcc.Tab(label='Overview', value='overview', style=tab_style, selected_style=tab_selected_style),
                              dcc.Tab(label='Discovery facilities', value='discovery_facilities', style=tab_style, selected_style=tab_selected_style),
