@@ -37,10 +37,10 @@ p, label {
     align-items: center;
     background: linear-gradient(90deg, #002244 0%, #003366 100%);
     color: #ffcc00;
-    padding: 18px 30px;
+    padding: 10px 30px;
     border-radius: 0px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 
@@ -85,7 +85,7 @@ p, label {
     color: #003366 !important;
 }
 
-/* ====== BUTTONS ====== */
+/* ====== BUTTONS ======
 
 button, .dash-button {
     background-color: #ffcc00;
@@ -103,14 +103,7 @@ button:hover, .dash-button:hover {
     background-color: #ffdb4d;
     transform: translateY(-2px);
 }
-
-/* ====== GRAPH STYLING ====== */
-
-.js-plotly-plot {
-    background-color: #ffffff;
-    box-shadow: none;
-    padding: 2px;
-}
+ */
 
 /* ====== FOOTER ====== */
 
@@ -126,7 +119,7 @@ button:hover, .dash-button:hover {
 }
 
 /* ====== RESPONSIVE DESIGN ====== */
-
+/* 
 @media (max-width: 768px) {
     #app-container {
         padding: 15px 20px;
@@ -141,3 +134,4 @@ button:hover, .dash-button:hover {
         margin-top: 10px;
     }
 }
+*/
