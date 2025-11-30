@@ -17,9 +17,7 @@ tabs_selector = dcc.Tabs(id="tabs-selector", value='comparison', style=tabs_styl
                              dcc.Tab(label='Discovery facilities', value='discovery_facilities', style=tab_style, selected_style=tab_selected_style),
                              dcc.Tab(label='Compare to Earth', value='comparison', style=tab_style, selected_style=tab_selected_style)])
 
-tab_content= html.Div(id='tab_blue_wrapper', style=tab_blue_container_style, children=[
-    dbc.Card(id='tab_content', children=[])
-    ])
+tab_content= html.Div(id='tab_content', children=[])
 
 
 # Layout

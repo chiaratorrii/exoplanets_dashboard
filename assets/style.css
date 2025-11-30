@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-    background-color: #f5f7fa;
+    background-color: #003366;
     color: #1b1f3b;
 } 
 
@@ -12,7 +12,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 25px 40px;
+    color: #003366;
 }
+
 
 /* Headings */
 h1, h2, h3 {
@@ -40,7 +42,7 @@ p, label {
     padding: 10px 30px;
     border-radius: 0px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 

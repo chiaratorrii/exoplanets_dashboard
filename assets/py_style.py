@@ -3,8 +3,9 @@
 # Container style for dcc.Tabs
 tabs_styles = {
     "backgroundColor": "#f5f7fa",  # container background
-    "padding": "0px",
-    "marginBottom": "0px"
+    "padding-top": "15px",
+    "marginBottom": "0px",
+    "marginTop": "0px",
 }
 
 # Style for individual tabs (normal/unselected)
@@ -33,24 +34,27 @@ tab_selected_style = {
     "padding":"10px"
 }
 
+
 ### TAB STYLE ###
 
-tab_blue_container_style = {
-    "backgroundColor": "#003366",
-    "margin":"0px",
-    "padding": "10px",
-    }
+# tab_blue_container_style = {
+#     "backgroundColor": "#003366",
+#     "margin":"0px",
+#     "padding": "10px",
+#     "height": "85%",
+#     }
 
-tab_white_container_style = {
-    "backgroundColor": "#ffffff"
-    }
+# tab_white_container_style = {
+#     "backgroundColor": "#ffffff"
+#     }
 
 ### CARD STYLE ###
 overview_layout_style = {
-    "height": "84.5vh",  # Full viewport height
+    "height": "100%",  # Full viewport height
     "display": "flex",
     "flexDirection": "column",
     "justifyContent": "space-between",
+    "margin": "10px",
 }
 
 card_style = {
@@ -94,7 +98,7 @@ yearly_discoveries_wrapper_style = {"width": "50%", "padding": "10px"}
 half_card_section_style = {
     "display": "flex",  # Use flex layout for children
     "justifyContent": "space-between",  # Space children evenly
-    "height": "50%",  # Each section takes half the height of the card
+    "height": "50vh",  # Each section takes half the height of the card
 }
 
 ### COMPARISON TAB STYLES ###
@@ -147,4 +151,24 @@ info_style = {
     "margin": "0",                  
     "display": "flex",  # Use flexbox for layout
     "flexDirection": "row",  # Arrange children vertically
+}
+
+
+### OBSERVATORIES TAB ###
+earth_space_options_style={"border":"0px", "backgroundColor": "#f5f7fa", "width":"300px"}
+
+map_or_space_style= {
+    "display": "flex",
+    "height": "85%",
+    "width": "100%",                # Ensure full width
+    "padding": "30px",                 # Remove padding
+    # "margin-left": "30px",
+    # "margin-bottom": "30px",                   # Remove margins
+}
+
+filter_section_style_facilities = {
+    "display": "flex",  # Use flex layout for children
+    "justifyContent": "space-between",  # Space children evenly
+    "height": "15%",  # Each section takes half the height of the card,
+    'width':'100%'
 }

@@ -6,6 +6,7 @@ import plotly.express as px
 from assets.py_style import *
 from datetime import date
 
+
 # Load data
 exoplanets = pd.read_csv("data\exoplanets_data.csv") 
 unique_exo = exoplanets.sort_values(['pl_name', 'releasedate'], ascending=[True, False]).drop_duplicates(subset='pl_name', keep='first')
@@ -197,7 +198,7 @@ def update_bubble_plot(tab, table_data, selected_rows):
 
 
     if not selected_rows:  
-        return html.P("Please select a planet🪐")
+        return html.P("🪐 Please select a planet")
     
     exo_data_selected = exo_data[exo_data['pl_name'] == table_data[selected_rows[0]]['Planet name']]
 
