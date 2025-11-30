@@ -50,7 +50,7 @@ tab_selected_style = {
 
 ### CARD STYLE ###
 overview_layout_style = {
-    "height": "100%",  # Full viewport height
+    "height": "100vh",  # Full viewport height
     "display": "flex",
     "flexDirection": "column",
     "justifyContent": "space-between",
@@ -58,7 +58,7 @@ overview_layout_style = {
 }
 
 card_style = {
-    "height": "100%",  # Card fills its parent container
+    "height": "100vh",  # Card fills its parent container
     "display": "flex",  # Use flexbox for layout
     "flexDirection": "column",  # Arrange children vertically
     "justifyContent": "space-between",  # Space out children proportionally
@@ -98,7 +98,7 @@ yearly_discoveries_wrapper_style = {"width": "50%", "padding": "10px"}
 half_card_section_style = {
     "display": "flex",  # Use flex layout for children
     "justifyContent": "space-between",  # Space children evenly
-    "height": "50vh",  # Each section takes half the height of the card
+    "height": "50%",  # Each section takes half the height of the card
 }
 
 ### COMPARISON TAB STYLES ###
@@ -159,7 +159,7 @@ earth_space_options_style={"border":"0px", "backgroundColor": "#f5f7fa", "width"
 
 map_or_space_style= {
     "display": "flex",
-    "height": "85%",
+    "height": "75%",
     "width": "100%",                # Ensure full width
     "padding": "30px",                 # Remove padding
     # "margin-left": "30px",
@@ -171,4 +171,27 @@ filter_section_style_facilities = {
     "justifyContent": "space-between",  # Space children evenly
     "height": "15%",  # Each section takes half the height of the card,
     'width':'100%'
+}
+
+obs_card_earth_style = {
+    "height": "70vh",  # Card fills its parent container
+    "display": "flex",  # Use flexbox for layout
+    "flexDirection": "column",  # Arrange children vertically
+    "justifyContent": "space-between",  # Space out children proportionall
+    "padding": "15px",
+    "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    "borderRadius": "12px",
+    "backgroundColor": "#ffffff"
+}
+
+obs_card_space_style = {
+    "height": "60vh",  # Card fills its parent container
+    "display": "flex",  # Use flexbox for layout
+    "flexDirection": "column",  # Arrange children vertically
+    "justifyContent": "space-between",  # Space out children proportionally
+    "margin": "10px",
+    "padding": "15px",
+    "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    "borderRadius": "12px",
+    "backgroundColor": "#ffffff"
 }

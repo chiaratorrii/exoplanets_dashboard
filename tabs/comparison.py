@@ -88,12 +88,8 @@ comp_table = html.Div(id='comp_table_wrapper',
 ), style={'marginTop': '10px', 'marginBottom': '5px', 'marginLeft':'0px', 'marginRight':'0px', 'paddingLeft':'40px', 'width':'35%'})
 
 
-### Bubble plot
-bubble_plot = html.Div(id='bubble_plot', children=[], style={'width':'100%', 'height':'60%'})
 
-### Info about the planet
-exo_info= html.Div(id='exo_info', children=[], style={'height':'40%'})
-
+bubble_and_info= html.Div(id='bubble_and_info', children=[], style=comp_selected_style)
 
 ### Layout ###
 comparison_layout = html.Div([
@@ -102,7 +98,7 @@ comparison_layout = html.Div([
             html.Div(children=[distance_slider, discovery_method_dropdown, discovery_year_picker], style=filter_section_style),
             html.Br(),
             html.Div(children=[comp_table,
-                               html.Div(children=[bubble_plot, exo_info], style=comp_selected_style)], 
+                               bubble_and_info], 
                                style=comp_section_style)
         ], style=card_body_style
         ),
@@ -184,24 +180,25 @@ def update_exo_table(tab, distance, method, start_date, end_date):
     return table
 
 
+
 @callback(
-    Output(component_id='bubble_plot', component_property='children'),
+    Output(component_id='bubble_and_info', component_property='children'),
     Input(component_id='tabs-selector', component_property='value'),
     Input(component_id='comp_table', component_property='data'),
     Input(component_id='comp_table', component_property='selected_rows')
 )
-def update_bubble_plot(tab, table_data, selected_rows):
+def update_bubble_info(tab, table_data, selected_rows):
     if tab != 'comparison':
         raise PreventUpdate
     
-    exo_data = unique_exo[['pl_name', 'pl_radj']]
-
+    # exo_data = unique_exo[['pl_name', 'pl_radj']]
 
     if not selected_rows:  
-        return html.P("🪐 Please select a planet")
+        return html.Div([html.P("🪐 Please select a planet")])
     
-    exo_data_selected = exo_data[exo_data['pl_name'] == table_data[selected_rows[0]]['Planet name']]
+    exo_data_selected = unique_exo[unique_exo['pl_name'] == table_data[selected_rows[0]]['Planet name']]
 
+    ### Bubble plot
     # Construct the bubble plot DataFrame
     if pd.notna(exo_data_selected['pl_radj'].mean()):
         exo_rad = 10.95 * exo_data_selected['pl_radj'].mean()
@@ -245,7 +242,6 @@ def update_bubble_plot(tab, table_data, selected_rows):
     else:
         fig.add_annotation(x=bubble_plot_df['x'][2], y=1, text=f"{round(bubble_plot_df['radius'][2], 1)} times <br> bigger than Earth", showarrow=False, font=dict(color='black', size=14))
 
-
     fig.update_layout(yaxis_title=None)
     fig.update_layout(xaxis_title=None)
     fig.update_xaxes(showline=False, showticklabels=False, ticks="inside", tickwidth=0, tickcolor='white', ticklen=0)
@@ -257,25 +253,11 @@ def update_bubble_plot(tab, table_data, selected_rows):
 
     bubble_plot=dcc.Graph(figure=fig, responsive=True, style={'width':'100%'})
 
-    # Return the bubble_plot_df as a string inside an html.P element
-    return bubble_plot
+    bubble_plot_wrap = html.Div(id='bubble_plot_wrap', children=[bubble_plot], style={'width':'100%', 'height':'40vh'})
 
 
-@callback(
-    Output(component_id='exo_info', component_property='children'),
-    Input(component_id='tabs-selector', component_property='value'),
-    Input(component_id='comp_table', component_property='data'),
-    Input(component_id='comp_table', component_property='selected_rows')
-)
-def update_bubble_plot(tab, table_data, selected_rows):
-    if tab != 'comparison':
-        raise PreventUpdate
-    
-    if not selected_rows:  
-        return html.P(" ")
-    
-    exo_data_selected = unique_exo[unique_exo['pl_name'] == table_data[selected_rows[0]]['Planet name']]
-    
+
+    ### Info about the planet
     pl_name = html.Div(children=[html.H2(exo_data_selected['pl_name'].unique()[0])],
                        style={'width':'30%', 'height':'100%', 'padding':'15px', 'display':'flex', 'align-items': 'center'})
     
@@ -303,8 +285,10 @@ def update_bubble_plot(tab, table_data, selected_rows):
             exo_data_selected['discoverymethod'].unique()[0]])
     ], style={'width': '30%', 'height': '100%', 'padding':'15px'})
 
-    return html.Div([pl_name,sy_info,disc_info], style=info_style)
+    exo_info=html.Div([pl_name,sy_info,disc_info], style=info_style)
 
+    ### Info about the planet
+    exo_info_wrap= html.Div(id='exo_info_wrap', children=[exo_info], style={'height':'30vh'})
 
-
-
+    # Return the bubble_plot_df as a string inside an html.P element
+    return html.Div([bubble_plot_wrap, exo_info_wrap])

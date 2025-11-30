@@ -62,8 +62,8 @@ earth_map.update_layout(
 )
 
 earth_map_div=html.Div(children=[dcc.Graph(id='earth_map', figure=earth_map, style={'height': '100%'})], style={'width':'70%', 'height':'100%'})
-facility_info_earth=html.Div(id='facility_info_earth', children=[], style={'width':'25%', 'height':'100%', 'margin-left':'30px', 'margin-right':'20px'})
-earth_div=html.Div(children=[earth_map_div, facility_info_earth], style={"display": "flex","flexDirection": "row"})
+facility_info_earth=html.Div(id='facility_info_earth', children=[], style={'width':'25%', 'height':'100%', 'margin-left':'20px', 'margin-right':'20px'})
+earth_div=html.Div(children=[earth_map_div, facility_info_earth], style={"display": "flex","flexDirection": "row", "height":"100%"})
 
 ### Space facilities
 obs_space=all_observatories[all_observatories['type']=='space'].copy()
@@ -102,7 +102,7 @@ space_table = children=dash_table.DataTable(
                     )
 
 space_table_div=html.Div(id='space_table_div', children=[space_table], style={'width':'50%', 'height':'100%', 'marginTop': '10px', 'marginBottom': '5px', 'marginLeft':'0px', 'marginRight':'0px', 'paddingLeft':'30px'})
-facility_info_space=html.Div(id='facility_info_space', children=[], style={'width':'35%', 'height':'100%', 'margin-left':'70px', 'margin-right':'20px'})
+facility_info_space=html.Div(id='facility_info_space', children=[], style={'width':'35%', 'height':'100%', 'margin-left':'40px', 'margin-right':'20px'})
 space_div=html.Div([space_table_div, facility_info_space],style={"display": "flex","flexDirection": "row", 'justifyContent': 'space-between'})
 
 ### Map or space div
@@ -180,7 +180,7 @@ def display_selected_point(click_data):
         html.Br(),
         html.Div([html.H2(f"{custom_data[5]}🪐", style={"font-size": "40px", "justify-content": "center", "display": "flex"}),
         html.P("number of discovered planets", style={"font-size": "12px", "display": "flex", "justify-content": "center"})])
-    ]), style=card_style))
+    ]), style=obs_card_earth_style))
 
 
 @callback(
@@ -215,4 +215,4 @@ def display_selected_point(table_data, selected_rows):
                 html.Br(),
                 html.Div([html.H2(f"{selected_obs['N of discovered planets'].values[0]}🪐", style={"font-size": "40px", "justify-content": "center", "display": "flex"}),
                 html.P("number of discovered planets", style={"font-size": "12px", "display": "flex", "justify-content": "center"})])
-    ]), style=card_style))
+    ]), style=obs_card_space_style))
